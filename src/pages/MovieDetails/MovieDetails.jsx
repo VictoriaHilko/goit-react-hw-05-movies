@@ -2,6 +2,7 @@ import { useState, useEffect, Suspense } from 'react';
 import { useParams, Outlet, useLocation, NavLink } from 'react-router-dom';
 import { MovieCard } from 'components/MovieCard/MovieCard';
 import { getMovieDetails } from 'utils/movies-api';
+import css from './MovieDetails.module.css';
 
 
 export const MovieDetails = () => {
@@ -23,17 +24,20 @@ export const MovieDetails = () => {
   return (
     <>
       <NavLink to={backLink}>
-        <button>Go back</button>
+        <button className={css.backButton}>← Go back</button>
       </NavLink>
       <MovieCard movie={movieDetails} />
 
-      <div>
-        <NavLink to={'cast'} state={{ from: backLink }}>
+      <div className={css.detailsContainer}>
+      <h3 className={css.detailsTitle}>Additional information </h3>
+      <div className={css.listDetails}>
+        <NavLink className={css.detailsLink} to={'cast'} state={{ from: backLink }}>
           Cast
         </NavLink>
-        <NavLink to={'reviews'} state={{ from: backLink }}>
+        <NavLink className={css.detailsLink} to={'reviews'} state={{ from: backLink }}>
           Reviews
         </NavLink>
+      </div>
       </div>
 
       <Suspense>

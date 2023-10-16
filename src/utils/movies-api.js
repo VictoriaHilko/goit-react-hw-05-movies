@@ -29,7 +29,7 @@ export const getMovieDetails = async (id) => {
 
 export const getMovieCredits = async (id) => {
     const { data } = await axios.get(`/movie/${id}/credits?${searchParams}`);
-    return data.results;
+    return data.cast;
 };
 
 export const getMovieReviews = async (id) => {

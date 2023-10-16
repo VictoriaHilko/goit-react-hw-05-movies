@@ -1,4 +1,4 @@
-// import css from './MovieCard.module.css';
+import css from './MovieCard.module.css';
 import noPoster from '../../images/noPoster.jpg';
 
 export const MovieCard = ({ movie }) => {
@@ -11,20 +11,20 @@ export const MovieCard = ({ movie }) => {
     const genresList = genres.map(genre => genre.name).join(', ');
 
     return (
-        <div>
-            <img src={poster_path ? baseImgUrl.concat(poster_path) : noPoster} alt="{title}" width="350" />
-            <div>
-                <h3>
+        <div className={css.movieContainer}>
+            <img className={css.movieImg} src={poster_path ? baseImgUrl.concat(poster_path) : noPoster} alt="{title}" width="350" />
+            <div className={css.movieDetailsContainer}>
+                <h3 className={css.movieTitle}>
                     {title} <p>({releaseDate})</p>
                 </h3>
-                <p>
-                    User score: <span>{vote_average}</span>
+                <p className={css.movieSubTitle}>
+                    User score: <span className={css.subTitleContent}>{vote_average}</span>
                 </p>
-                <p>
-                    Overview: <span>{overview}</span>
+                <p className={css.movieSubTitle}>
+                    Overview: <span className={css.subTitleContent}>{overview}</span>
                 </p>
-                <p>
-                    Genres: <span>{genresList}</span>
+                <p className={css.movieSubTitle}>
+                    Genres: <span className={css.subTitleContent}>{genresList}</span>
                 </p>
             </div>
         </div>
