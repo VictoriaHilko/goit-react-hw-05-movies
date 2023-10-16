@@ -6,11 +6,13 @@ export const Layout = () => {
     return (
         <>
         <Header/>
+        <main>
         <div className="container">
         <Suspense fallback={null}>
           <Outlet />
         </Suspense>
       </div>
+        </main>
         </>
     );
 };

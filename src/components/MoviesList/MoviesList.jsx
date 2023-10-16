@@ -1,8 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import css from './MoviesList.module.css';
 import noPoster from '../../images/noPoster.jpg';
 
 export const MoviesList = ({movies}) => {
+
+  const location = useLocation();
 
   const baseImgUrl = 'https://image.tmdb.org/t/p/w500/';
 
@@ -10,7 +12,7 @@ export const MoviesList = ({movies}) => {
       <ul className={css.moviesListContainer}>
       {movies.map(({id, title, original_name, poster_path}) => (
         <li className={css.moviesListItem} key={id}>
-          <NavLink className={css.movieLink} to={`/movies/${id}`}>
+          <NavLink className={css.movieLink} to={`/movies/${id}`} state={{ from: location }}>
           <img className={css.movieImg} src={poster_path ? baseImgUrl.concat(poster_path) : noPoster} alt={title} />
           
           <div className={css.movieContainer}>
