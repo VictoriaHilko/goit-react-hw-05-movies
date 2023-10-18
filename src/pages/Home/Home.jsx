@@ -4,17 +4,17 @@ import { getMoviesTrending } from "utils/movies-api";
 import css from './Home.module.css';
 
 export const Home = () => {
-    const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
-    useEffect(() => {
-        getMoviesTrending().then(setMovies);
-      }, []);
+  useEffect(() => {
+    getMoviesTrending().then(setMovies);
+  }, []);
 
 
-      return (
-        <>
-        <h1 className={css.homeTitle}>Tranding today</h1>
-        <MoviesList movies={movies}/>
-        </>
-      );
+  return (
+    <>
+      <h1 className={css.homeTitle}>Tranding today</h1>
+      <MoviesList movies={movies} />
+    </>
+  );
 };

@@ -1,12 +1,16 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import css from './Header.module.css';
+import { NavItemLink } from './Header.styled';
 
 const navigationItems = [
     {href: '/', text: 'Home'},
     {href:'movies', text: 'Movies'}
 ];
 
+
 export const Header = () => {
+
+    
   return (
     <div className={css.container}>
     <header className={css.header}>
@@ -14,7 +18,9 @@ export const Header = () => {
             <ul className={css.navList}>
                 {navigationItems.map(({href, text}) => (
                     <li className={css.navListItem} key={href}>
-                        <NavLink className={css.navLink} to={href}>{text}</NavLink>
+                        <NavItemLink className={css.navLink} 
+                        to={href}
+                        activeClassName={css.activeNavLink}>{text}</NavItemLink>
                     </li>
                 ))}
             </ul>

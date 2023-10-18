@@ -21,10 +21,10 @@ export const MovieCard = ({ movie }) => {
                     User score: <span className={css.subTitleContent}>{vote_average}</span>
                 </p>
                 <p className={css.movieSubTitle}>
-                    Overview: <span className={css.subTitleContent}>{overview}</span>
+                    Overview: <span className={css.subTitleContent}>{overview ? overview : 'No overview available'}</span>
                 </p>
                 <p className={css.movieSubTitle}>
-                    Genres: <span className={css.subTitleContent}>{genresList}</span>
+                    Genres: <span className={css.subTitleContent}>{genresList ? genresList : 'No genres available'}</span>
                 </p>
             </div>
         </div>

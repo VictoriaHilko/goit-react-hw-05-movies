@@ -22,24 +22,3 @@
   list-style-type: none;
 }
 
-.navLink {
-  padding: 10px;
-  color: white;
-
-  border: 1px solid black;
-  border-radius: 15px;
-
-  cursor: pointer;
-
-  text-decoration: none;
-  transition: all 350ms linear;
-}
-
-.navLink:hover,
-.navLink:focus {
-  border: 1px solid white;
-  background-color: #000;
-  color: white;
-  border-radius: 15px;
-
-}
