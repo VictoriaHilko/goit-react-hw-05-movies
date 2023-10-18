@@ -1,4 +1,3 @@
-import { NavLink, useLocation } from 'react-router-dom';
 import css from './Header.module.css';
 import { NavItemLink } from './Header.styled';
 
